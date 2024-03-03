@@ -1,5 +1,5 @@
 import { useOutlet } from "react-router-dom";
-import RecipeList from "./RecipeList";
+import RecipeList from "./RecipeList.tsx";
 import "./RecipesLayout.css";
 //import { useAuth } from "../security/_Authprovider";
 

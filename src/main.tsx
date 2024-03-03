@@ -4,7 +4,7 @@ import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 import "./index.css";
 
-//Observe the "!"" below, which tells TypeScript that you are certain document.getElementById("root") 
+//Observe the "!"" below, which tells TypeScript that you are certain document.getElementById("root")
 //will not return null,
 const root = ReactDOM.createRoot(document.getElementById("root")!);
 root.render(

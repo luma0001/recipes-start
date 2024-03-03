@@ -1,7 +1,7 @@
 import { useState } from "react";
 //import { useLocation } from "react-router-dom";
 //import { useAuth } from "./_Authprovider";
-import { User } from "../services/authFacade";
+import { User } from "../services/authFacade.ts";
 import "./login.css";
 
 const Login = () => {

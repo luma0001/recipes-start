@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { getRecipe, Recipe as ApiRecipe } from "../services/apiFacade";
+import { getRecipe, Recipe as ApiRecipe } from "../services/apiFacade.ts";
 import { useEffect, useState } from "react";
 
 export default function Recipe() {
