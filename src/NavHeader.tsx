@@ -17,13 +17,14 @@ export default function NavHeader() {
           {/* <a href="/recipes">Recipes</a> */}
           <NavLink to="/recipes">Recipes</NavLink>
         </li>
+
         <li>
           {/* <a href="/add">Add</a> */}
           <NavLink to="/add">Add</NavLink>
         </li>
         <li>
           {/* <a href="/add">Add</a> */}
-          <NavLink to="/test">Test</NavLink>
+          <NavLink to="/add-catergory">Add Category</NavLink>
         </li>
         <AuthStatus />
       </ul>
