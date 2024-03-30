@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import { Categories } from "./recipes/Categories.tsx";
 import Recipe from "./recipes/Recipe.tsx";
 //import Recipes from "./recipes/RecipeList.tsx";
+import RequireAuth from "./security/RequireAuth.tsx";
 import RecipeForm from "./recipes/RecipeForm.tsx";
 import Login from "./security/Login.tsx";
 import Logout from "./security/Logout.tsx";
@@ -12,7 +13,8 @@ import RecipesLayout from "./recipes/RecipesLayout.tsx";
 import AddCategory from "./recipes/AddCategory.tsx";
 
 export default function App() {
-  //const auth = useAuth();
+  // const auth = useAuth();
+
   return (
     <Layout>
       <Routes>
@@ -24,7 +26,14 @@ export default function App() {
         </Route>
 
         {/*  vi skal have noget "admin" authorization på vores knap - så vi bliver sendt til login siden!*/}
-        <Route path="/add" element={<RecipeForm />} />
+        <Route path="/add"
+               element={
+                 <RequireAuth roles={["ADMIN"]}>
+                   <RecipeForm />
+                 </RequireAuth>
+               }
+        />
+
         <Route path="/add-category" element={<AddCategory />} />
 
 

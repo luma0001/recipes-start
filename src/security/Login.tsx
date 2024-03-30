@@ -24,15 +24,13 @@ const Login = () => {
     setErr(null);
     console.log(err);
     alert("Login: " + JSON.stringify(user));
-    return;
-     auth
-          .signIn(user)
-      .then(() => {
-         navigate(from, { replace: true });
-       })
-     .catch((err) => {
-       setErr(err);
-     });
+    return auth.signIn(user)
+        .then(() => {
+          navigate(from, { replace: true });
+        })
+        .catch((err) => {
+          setErr(err);
+        });
   }
 
   return (

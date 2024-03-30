@@ -1,7 +1,10 @@
 import { Link, NavLink } from "react-router-dom";
 import AuthStatus from "./security/AuthStatus.tsx";
+import {useAuth} from "./security/AuthProvider.tsx";
 
 export default function NavHeader() {
+  const auth = useAuth();
+
   return (
     <nav>
       <ul>
@@ -18,10 +21,12 @@ export default function NavHeader() {
           <NavLink to="/recipes">Recipes</NavLink>
         </li>
 
-        <li>
-          {/* <a href="/add">Add</a> */}
-          <NavLink to="/add">Add</NavLink>
-        </li>
+        {auth.isLoggedIn() && (
+            <li>
+              <NavLink to="/add">Add</NavLink>
+            </li>
+        )}
+
         <li>
           {/* <a href="/add">Add</a> */}
           <NavLink to="/add-catergory">Add Category</NavLink>
