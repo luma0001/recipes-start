@@ -1,21 +1,26 @@
 import { useParams } from "react-router-dom";
-import { getRecipe, Recipe as ApiRecipe } from "../services/apiFacade.ts";
+import { Recipe as ApiRecipe } from "../services/apiFacade.ts";
 import { useEffect, useState } from "react";
 
 export default function Recipe() {
-  //const { id } = useParams();
-  //console.log("id", id);
+  const { id } = useParams();
+  console.log("id", id);
+
+  // DUMMYS
 
   const [recipe, setRecipe] = useState<ApiRecipe | null>(null);
-  // useEffect(() => {
-  //   getRecipe(Number(id)).then((res) => setRecipe(res));
-  // }, [id]);
+  useEffect(() => {
+    getRecipe(Number(id)).then((res) => setRecipe(res));
+  }, [id]);
 
   return (
     <>
       {recipe ? (
         <>
-          <h3> {recipe.name} ({recipe.id})</h3>
+          <h3>
+            {" "}
+            {recipe.name} ({recipe.id})
+          </h3>
           <div style={{ display: "flex" }}>
             <img
               style={{ width: 200, margin: 10, flexDirection: "column" }}

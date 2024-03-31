@@ -23,7 +23,7 @@ interface Info {
 
 // den her kan gemmes i en objekt hvor jeg casher, der kan jeg sætte en timestamp ind for at gøre det automatisk over tid.
 let categories: Array<string> = [];
-let recipes: Array<Recipe> = [];
+// let recipes: Array<Recipe> = [];
 // det her er et javaScript
 // let info: Info = { reference: "", created: "", info: "" };
 let info: Info | null = null;
